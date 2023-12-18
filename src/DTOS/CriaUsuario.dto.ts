@@ -1,12 +1,12 @@
 import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
 
 export class CriaUsuarioDTO {
-  @IsNotEmpty()
+  @IsNotEmpty({ message: 'O Nome não pode ser vazio.' })
   nome: string;
 
-  @IsEmail()
+  @IsEmail(undefined, { message: 'O Email informado não é válido' })
   email: string;
 
-  @MinLength(6)
+  @MinLength(6, { message: 'A senha deve ter no mínimo 6 caracteres' })
   senha: string;
 }
