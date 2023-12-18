@@ -22,6 +22,9 @@ export class ImagemProdutoDTO {
 }
 
 export class CriaProdutoDTO {
+  @IsNotEmpty({ message: 'O campo usuarioId não pode ser vazio.' })
+  usuarioId: string;
+
   @IsNotEmpty({ message: 'O campo nome não pode ser vazio.' })
   nome: string;
 
